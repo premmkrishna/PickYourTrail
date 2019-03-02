@@ -1,8 +1,11 @@
 import com.pickyourtrail.test.SuperStack;
 import org.junit.Test;
 
-public class SuperStackTest {
+import java.util.Arrays;
 
+import static java.lang.String.valueOf;
+
+public class SuperStackTest {
     @Test
     public void testStack(){
         int size=12;

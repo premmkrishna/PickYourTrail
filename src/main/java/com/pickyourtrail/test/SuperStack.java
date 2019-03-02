@@ -1,6 +1,12 @@
 package com.pickyourtrail.test;
 
+import java.util.logging.Logger;
+
+import static java.lang.String.valueOf;
+
 public class SuperStack {
+
+    private static Logger log = Logger.getLogger(SuperStack.class.getName());
     private final int maxSize;
     private final long[] stackArray;
     private int top;
@@ -29,14 +35,18 @@ public class SuperStack {
     private void peekHelper() {
         if (isEmpty()) {
             System.out.println("EMPTY");
+            log.info("EMPTY");
         } else {
-            System.out.println(peek());
+            long element = peek();
+            System.out.println(element);
+            log.info(valueOf(element));
         }
     }
 
     private void push(long j) {
         if(top==maxSize-1){
             System.out.println("Cannot push to a full stack");
+            log.info("Cannot push to a full stack");
             return;
         }
         stackArray[++top] = j;
@@ -45,6 +55,7 @@ public class SuperStack {
     private long pop() {
         if(top==-1){
             System.out.println("Cannot pop empty stack");
+            log.info("Cannot pop empty stack");
             return -1;
         }
         return stackArray[top--];
