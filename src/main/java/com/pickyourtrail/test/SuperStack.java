@@ -17,29 +17,27 @@ public class SuperStack {
         top = -1;
     }
 
-    public void pushHelper(long k) {
+    public String pushHelper(long k) {
         push(k);
-        peekHelper();
+        return peekHelper();
     }
 
-    public void popHelper() {
+    public String popHelper() {
         pop();
-        peekHelper();
+        return peekHelper();
     }
 
-    public void incHelper(int e, int k) {
+    public String incHelper(int e, int k) {
         inc(e, k);
-        peekHelper();
+        return peekHelper();
     }
 
-    private void peekHelper() {
+    private String peekHelper() {
         if (isEmpty()) {
-            System.out.println("EMPTY");
-            log.info("EMPTY");
+            return "EMPTY";
         } else {
             long element = peek();
-            System.out.println(element);
-            log.info(valueOf(element));
+            return valueOf(element);
         }
     }
 
